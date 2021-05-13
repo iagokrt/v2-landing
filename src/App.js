@@ -12,6 +12,7 @@ import Lights from './components/Lights'
 import Loader from './components/Loader'
 
 import MusicPlayer from './components/MusicPlayer'
+import CustomCursor from './components/CustomCursor'
 
 function App() {
   const domContent = useRef()
@@ -32,18 +33,18 @@ function App() {
       <Canvas
         concurrent
         colorManagement
-        camera={{ position: [0, 0, 110], fov: 70 }}
+        camera={{ position: [0, 0, 70], fov: 70 }}
       >
         <Lights />
         <Suspense fallback={null}>
           <group>
             <mesh>
-              <sphereBufferGeometry args={[50, 90]} attach="geometry" />
+              <sphereBufferGeometry args={[71, 80]} attach="geometry" />
               <MeshWobbleMaterial
                 attach="material"
                 side={FrontSide}
                 metalness={0.2}
-                speed={0.79}
+                speed={0.69}
                 factor={2}
                 color={'#b01030'}
               />
@@ -52,6 +53,7 @@ function App() {
         </Suspense>
       </Canvas>
       <MusicPlayer />
+      <CustomCursor />
       <div className="scrollArea" ref={scrollArea} onScroll={onScroll}>
         <div style={{ position: 'sticky', top: 0 }} ref={domContent} />
         <div style={{ height: `${state.sections * 100}vh` }} />
