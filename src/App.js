@@ -53,10 +53,12 @@ function App() {
         </Suspense>
       </Canvas>
       <MusicPlayer />
-      <CustomCursor />
+     
       <div className="scrollArea" ref={scrollArea} onScroll={onScroll}>
-        <div style={{ position: 'sticky', top: 0 }} ref={domContent} />
+        <div style={{ position: 'fixed', top: 50 }} ref={domContent} />
+        <CustomCursor />
         <div style={{ height: `${state.sections * 100}vh` }} />
+        
       </div>
     </>
   )
