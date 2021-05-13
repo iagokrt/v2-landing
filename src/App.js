@@ -12,7 +12,10 @@ import Lights from './components/Lights'
 import Loader from './components/Loader'
 
 import MusicPlayer from './components/MusicPlayer'
-import CustomCursor from './components/CustomCursor'
+
+import {Viewer} from './components/Viewer'
+
+import {HTMLContent} from './components/Content'
 
 function App() {
   const domContent = useRef()
@@ -37,6 +40,19 @@ function App() {
       >
         <Lights />
         <Suspense fallback={null}>
+        <HTMLContent
+        domContent={domContent}
+        modelPath="/rose.gltf"
+        positionY={0}
+        bgColor={'tomato'}
+        rotateVelocity={-0.005}
+        meshX={20}
+        meshY={5}
+        meshZ={22}
+        meshScale={[12, 12, 12]}
+      >
+        <h1>About You</h1>
+      </HTMLContent>
           <group>
             <mesh>
               <sphereBufferGeometry args={[71, 80]} attach="geometry" />
@@ -44,8 +60,8 @@ function App() {
                 attach="material"
                 side={FrontSide}
                 metalness={0.2}
-                speed={0.69}
-                factor={2}
+                speed={0.25}
+                factor={1.1}
                 color={'#b01030'}
               />
             </mesh>
@@ -56,7 +72,7 @@ function App() {
      
       <div className="scrollArea" ref={scrollArea} onScroll={onScroll}>
         <div style={{ position: 'fixed', top: 50 }} ref={domContent} />
-        <CustomCursor />
+       
         <div style={{ height: `${state.sections * 100}vh` }} />
         
       </div>
