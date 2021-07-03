@@ -12,11 +12,6 @@ const PositionalSoundEffect = () => {
       position: [12, 0, -33],
       url: 'Salvando.m4a',
       color: '#0000ff'
-    },
-    {
-      position: [-12, 0, -33],
-      url: 'Saverrr.m4a',
-      color: '#ff0000'
     }
   ]
 

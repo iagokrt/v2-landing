@@ -12,18 +12,21 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #000123;
+  background: #fffffe;
   transition: 0.4s ease-in-out;
+  cursor: url('/ellipse.png');
 }
 
 html,
 body,
 #root {
+  position: absolute;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  z-index: -2;
+  // overflow: hidden;
 }
 
 a {
@@ -41,7 +44,7 @@ a {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgba($color: #f1f1f1, $alpha: 0.2);
+  background: rgba($color: #b01030, $alpha: 0.4);
 }
 
 /* Handle */
@@ -96,7 +99,7 @@ header {
   left: 0px;
   width: 100%;
   height: 100%;
-  background: #0c1241;
+  background: #b01030;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -106,16 +109,17 @@ header {
 
 .loading-bar-container {
   width: 100px;
-  height: 8px;
+  height: 10px;
   padding-top: 1px;
   padding-bottom: 1px;
-  background: #0c0c0c;
+  background: black;
 }
 
 .loading-bar {
-  height: 6px;
   width: 100px;
-  background: rgba($color: #1525f0, $alpha: 0.6);
+  height: 2px;
+  background: rgba($color: crimson, $alpha: 0.5);
+  border-radius: 50%;
 }
 
 article#socials-icons-container {
